@@ -11,11 +11,17 @@ client_surname = input("Enter your Surname: ")
 
 print("Hello ", client_surname,client_name)
 
-# current_date = dt.date(dt.now())
+current_date = dt.date(dt.now())
+
 print("Choose device type by inputing the corresponding number: ")
 
-#get input from the user and change it 
-device_nr = input(devices_list)
+while True:
+    try:
+        #get input from the user and change it 
+        device_nr = int(input(devices_list))
+        break
+    except ValueError:
+        print("Please provide an integer for a number.!!!!!!")
 
 device_nr = int(device_nr)
 
@@ -25,16 +31,13 @@ device_issues = input("What is the issue with your device? ")
 
 print("Test")
 
-resolved = input("Has this issue been resolved? press ['True'] or ['False']: ")
-
-print(resolved)
+while True:
+    try:
+        resolved = int(input("Has this issue been resolved? press (1)['True'] or (2)['False']: "))
+        break
+    except ValueError:
+        print("You must choose either (1) or (2)")
 
 charged_amount = input("What is the estimate charge ?")
 
 charged_amount = float(charged_amount)
-
-
-
-
-
-
