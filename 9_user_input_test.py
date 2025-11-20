@@ -1,0 +1,40 @@
+from datetime import datetime as dt
+
+devices_list = ['(1) Android','(2) Windows desktop', '(3) Windows laptop', '(4) Macbook', '(5) iOS', '(6) Linux laptop', '(7) Smart TV', 
+                '(8) Smartwatch']
+
+print("Welcome to my Amazing IT Support Store.")
+
+client_name = input("Enter your Name: ")
+
+client_surname = input("Enter your Surname: ")
+
+print("Hello ", client_surname,client_name)
+
+# current_date = dt.date(dt.now())
+print("Choose device type by inputing the corresponding number: ")
+
+#get input from the user and change it 
+device_nr = input(devices_list)
+
+device_nr = int(device_nr)
+
+print("You have chosen ", devices_list[device_nr-1])
+
+device_issues = input("What is the issue with your device? ")
+
+print("Test")
+
+resolved = input("Has this issue been resolved? press ['True'] or ['False']: ")
+
+print(resolved)
+
+charged_amount = input("What is the estimate charge ?")
+
+charged_amount = float(charged_amount)
+
+
+
+
+
+

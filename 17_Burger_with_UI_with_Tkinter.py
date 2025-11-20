@@ -76,7 +76,7 @@ label = tk.Label(app_window, text="Welcome to my Burger Builder App!", font=('Ar
 label.pack(padx=20,pady=20)
 
 #textbox 
-textBox = tk.Text(app_window, height=4, font=('Arial', 16))
+textBox = tk.Text(app_window, height=2, font=('Arial', 16))
 textBox.pack(padx=20)
 
 # Control variable for the radio buttons
@@ -121,7 +121,7 @@ button2a.pack(side=tk.LEFT,pady=10)
 button2b = tk.Button(button_frame_salad, width=20,text="Coleslaw", command=add_salad_coleslaw)
 button2b.pack(side=tk.LEFT,pady=10)
 
-button2c = tk.Button(button_frame_salad, width=20,text="Tomato", command=add_salad_tomato)
+button2c = tk.Button(button_frame_salad, width=20,text="Spinach", command=add_salad_tomato)
 button2c.pack(side=tk.LEFT,pady=10)
 
 button2None = tk.Button(button_frame_salad, width=10,text="Remove", command=remove_all_salad)
