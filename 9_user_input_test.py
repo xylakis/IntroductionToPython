@@ -34,6 +34,10 @@ print("Test")
 while True:
     try:
         resolved = int(input("Has this issue been resolved? press (1)['True'] or (2)['False']: "))
+        #Check this
+        # if resolved >= 2:
+        #     raise ValueError("Number must be less than 2")
+
         break
     except ValueError:
         print("You must choose either (1) or (2)")
