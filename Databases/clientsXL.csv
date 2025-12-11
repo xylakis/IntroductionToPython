@@ -1,0 +1,4 @@
+Id_number,Name,Surname,Date,Device,Comments,Resolved,Charged($)
+1001,Makis,Triantaffylidis,8/10/2025 0:00,Desktop PC,""" Format Windows 11""",1,50.5
+1002,Maria,Karamolegou,9/10/2025 0:00,Android Phone,""" Change touch display""",0,0
+1003,Mitsos,Triantaffylopoulos,9/11/2025 0:00,Macbook,"""Needs formating""",1,150

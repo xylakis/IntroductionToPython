@@ -17,7 +17,7 @@ new_row = {"Id_number":last_client_id+1, "Name": "Eleni", "Surname": "Drougka", 
 
 # new_row.to_csv("customers.csv", mode="a", index=False, header=False)
 
-# ✅ Recommended modern way
+# Recommended modern way
 df_clients.loc[len(df_clients)] = new_row
 
 # Save to CSV
