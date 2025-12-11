@@ -25,7 +25,9 @@ while True:
 
 device_nr = int(device_nr)
 
-print("You have chosen ", devices_list[device_nr-1])
+device = devices_list[device_nr-1]
+
+print("You have chosen ", device)
 
 device_issues = input("What is the issue with your device? ")
 
@@ -45,3 +47,15 @@ while True:
 charged_amount = input("What is the estimate charge ?")
 
 charged_amount = float(charged_amount)
+
+new_client = pd.DataFrame([{
+    "Client Name": client_name,
+    "Client Surname": client_surname,
+    "Date": current_date,
+    "Device": device,
+    "Issue": device_issues,
+    "Resolved": resolved,
+    "Charged Amount": charged_amount
+}])
+    
+

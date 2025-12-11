@@ -5,8 +5,12 @@ data = {
   "duration": [50, 40, 45]
 }
 
+print(type(data))
+
 #load data into a DataFrame object:
 df = pd.DataFrame(data)
+
+df.to_csv('Databases/out_b.csv', index=False)
 
 # #return first row 
 # print(df.loc[0])
