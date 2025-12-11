@@ -1,4 +1,5 @@
 from datetime import datetime as dt
+import pandas as pd
 
 devices_list = ['(1) Android','(2) Windows desktop', '(3) Windows laptop', '(4) Macbook', '(5) iOS', '(6) Linux laptop', '(7) Smart TV', 
                 '(8) Smartwatch']
@@ -57,5 +58,11 @@ new_client = pd.DataFrame([{
     "Resolved": resolved,
     "Charged Amount": charged_amount
 }])
+
+df = pd.DataFrame()
+
+df=pd.concat([df,new_client], ignore_index=True)
+
+df.to_csv('Databases/my_clients.csv', index=False)
     
 
