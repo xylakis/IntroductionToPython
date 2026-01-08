@@ -1,6 +1,8 @@
 from datetime import datetime as dt
 import pandas as pd
 
+df_clients = pd.read_csv("./Databases/my_clients.csv")
+
 devices_list = ['(1) Android','(2) Windows desktop', '(3) Windows laptop', '(4) Macbook', '(5) iOS', '(6) Linux laptop', '(7) Smart TV', 
                 '(8) Smartwatch']
 
@@ -57,12 +59,9 @@ new_client = pd.DataFrame([{
     "Charged Amount": charged_amount
 }])
 
-df = pd.DataFrame()
 
-df = pd.read_csv('Databases/my_clients.csv')
+df_clients = pd.concat([df_clients, new_client], ignore_index=True)
 
-df=pd.concat([df,new_client], ignore_index=True)
-
-df.to_csv('Databases/my_clients.csv', index=False)
+df_clients.to_csv('Databases/my_clients.csv', index=False)
     
 
