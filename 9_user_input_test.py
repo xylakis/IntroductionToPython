@@ -1,10 +1,6 @@
 from datetime import datetime as dt
 import pandas as pd
 
-
-#Read my client list and save this as datafame to df_clients 
-df_clients = pd.read_csv("./Databases/my_clients.csv")
-
 devices_list = ['(1) Android','(2) Windows desktop', '(3) Windows laptop', '(4) Macbook', '(5) iOS', '(6) Linux laptop', '(7) Smart TV', 
                 '(8) Smartwatch']
 
@@ -36,7 +32,6 @@ print("You have chosen ", device)
 
 device_issues = input("What is the issue with your device? ")
 
-#Check if Resolved is always an integer (1 or 2 Ideally)
 while True:
     try:
         resolved = int(input("Has this issue been resolved? press (1)['True'] or (2)['False']: "))
@@ -48,11 +43,10 @@ while True:
     except ValueError:
         print("You must choose either (1) or (2)")
 
-#get amount from the input screen and convert it to float
 charged_amount = input("What is the estimate charge ?")
+
 charged_amount = float(charged_amount)
 
-#create new dataframe 
 new_client = pd.DataFrame([{
     "Client Name": client_name,
     "Client Surname": client_surname,
@@ -63,10 +57,12 @@ new_client = pd.DataFrame([{
     "Charged Amount": charged_amount
 }])
 
-# Append (Add) new client to clients dataframe
-df_clients = pd.concat([df_clients, new_client], ignore_index=True)
+df = pd.DataFrame()
 
-#Save the dataframe to the CSV file 
-df_clients.to_csv('Databases/my_clients.csv', index=False)
+df = pd.read_csv('Databases/my_clients.csv')
+
+df=pd.concat([df,new_client], ignore_index=True)
+
+df.to_csv('Databases/my_clients.csv', index=False)
     
 
