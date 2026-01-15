@@ -9,10 +9,10 @@ def add_bread():
 def choose_android():
     print("Test")
 
-
-
 app_window = tk.Tk()
 #app_window_B = tk.Tk()
+
+print(type(app_window))
 
 app_window.title('My Cool Clients registration App')
 #app_window_B.title('My Cool Clients B')
@@ -21,7 +21,7 @@ app_window.title('My Cool Clients registration App')
 app_window.geometry('1000x250')
 
 
-myButton = tk.Button(app_window, width=10 ,text="Add Bread", command=add_bread)
+myButton = tk.Button(app_window, width=10 ,text="Add Client", command=add_bread)
 myButton.pack(pady=5)
 
 #textbox 
@@ -71,8 +71,6 @@ radio8.pack(side=tk.LEFT, padx=5)
 # appWindow.title("My First Tkinter App")
 # label = tk.Label(root, text="Hello, Tkinter!")
 # label.pack(padx=20, pady=20)
-
-
 
 app_window.mainloop()
 
