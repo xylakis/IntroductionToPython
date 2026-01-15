@@ -1,6 +1,7 @@
 from datetime import datetime as dt
 import pandas as pd
 
+#1. save the clients csv to a dataframe 
 df_clients = pd.read_csv("./Databases/my_clients.csv")
 
 devices_list = ['(1) Android','(2) Windows desktop', '(3) Windows laptop', '(4) Macbook', '(5) iOS', '(6) Linux laptop', '(7) Smart TV', 
@@ -34,21 +35,21 @@ print("You have chosen ", device)
 
 device_issues = input("What is the issue with your device? ")
 
+#New Changes
 while True:
     try:
         resolved = int(input("Has this issue been resolved? press (1)['True'] or (2)['False']: "))
-        #Check this
-        # if resolved >= 2:
-        #     raise ValueError("Number must be less than 2")
-
+        if resolved not in (1,2):
+            raise ValueError("You must choose either (1) or (2)")
         break
     except ValueError:
-        print("You must choose either (1) or (2)")
+        print("Error: input must be 1 or 2")
 
 charged_amount = input("What is the estimate charge ?")
 
 charged_amount = float(charged_amount)
 
+#2. save all input fields to a new_client dataframe
 new_client = pd.DataFrame([{
     "Client Name": client_name,
     "Client Surname": client_surname,
@@ -59,9 +60,10 @@ new_client = pd.DataFrame([{
     "Charged Amount": charged_amount
 }])
 
-
+#3. Append or concat to the existing database (dataframe)
 df_clients = pd.concat([df_clients, new_client], ignore_index=True)
 
+#4. save the dataframe to our csv file
 df_clients.to_csv('Databases/my_clients.csv', index=False)
     
 
