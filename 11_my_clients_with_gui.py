@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+import pandas as pd 
 
 def add_client():
     print(first_name.get(),surname.get(),device_var.get(),issue_text.get('1.0','end'),resolved_var.get(),cost.get())
@@ -72,7 +73,7 @@ issue_text.grid(
 )
 
 # ---- Issue Resolved ----
-tk.Label(input_frame, text="Ressolved:", font=('Arial', 14))\
+tk.Label(input_frame, text="Resolved:", font=('Arial', 14))\
     .grid(row=5, column=0, sticky="w", padx=5, pady=5)
 
 resolved_var = tk.BooleanVar(value=False)  # default
