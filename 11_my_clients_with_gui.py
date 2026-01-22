@@ -5,21 +5,16 @@ def add_client():
     print(first_name.get(),surname.get(),device_var.get(),issue_text.get('1.0','end'),resolved_var.get(),cost.get())
 
 app_window = tk.Tk()
-#app_window_B = tk.Tk()
 
 print(type(app_window))
 
 app_window.title('My Cool Clients registration App')
-#app_window_B.title('My Cool Clients B')
 
 #In pixels
 app_window.geometry('550x550')
 
 input_frame = tk.Frame(app_window)
 input_frame.pack(padx=10, pady=10)
-
-# Control variable for the radio buttons
-# var = tk.IntVar()
 
 # ---- First Name ----
 tk.Label(input_frame, text="First Name:", font=('Arial', 14)).grid(row=0, column=0, sticky="w", padx=5, pady=5)
@@ -102,7 +97,6 @@ tk.Radiobutton(
 ).pack(side=tk.LEFT)
 
 # ---- Estimate Cost ----
-
 tk.Label(input_frame, text="Estimate ($):", font=('Arial', 14))\
     .grid(row=6, column=0, sticky="w", padx=5, pady=5)
 
@@ -113,5 +107,3 @@ myButton = tk.Button(input_frame , width=15, text="Add Client", font=('Arial', 1
 myButton.grid(row=7, column=0, pady=5)
 
 app_window.mainloop()
-
-
