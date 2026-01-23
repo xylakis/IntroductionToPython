@@ -1,13 +1,47 @@
 import tkinter as tk
 from tkinter import ttk
 import pandas as pd 
+from datetime import datetime as dt
 
 def add_client():
-    print(first_name.get(),surname.get(),device_var.get(),issue_text.get('1.0','end'),resolved_var.get(),cost.get())
+    
+    print(first_name.get(),surname.get(),
+          device_var.get(),issue_text.get('1.0','end').strip(),
+          resolved_var.get(),cost.get())
+    
+    #1. save the clients csv to a dataframe 
+    df_clients = pd.read_csv("./Databases/my_clients.csv")
+
+    current_date = dt.date(dt.now())
+
+    if(resolved_var.get() == 1):
+        resolved = 'True'
+    else:
+        resolved = 'False'
+    
+    #2. save all input fields to a new_client dataframe
+    new_client = pd.DataFrame([{
+        "Client Name": first_name.get(),
+        "Client Surname": surname.get(),
+        "Date": current_date,
+        "Device": device_var.get(),
+        "Issue": issue_text.get('1.0','end').strip(),
+        "Resolved": resolved,
+        "Charged Amount": cost.get()
+    }])
+
+    #3. Append or concat to the existing database (dataframe)
+    df_clients = pd.concat([df_clients, new_client], ignore_index=True)
+
+    #4. save the dataframe to our csv file
+    df_clients.to_csv('Databases/my_clients.csv', index=False)
+
+    first_name.delete(0, 'end')
+    surname.delete(0, 'end')
+    issue_text.delete(1.0, 'end')
+    cost.delete(0,'end')
 
 app_window = tk.Tk()
-
-print(type(app_window))
 
 app_window.title('My Cool Clients registration App')
 
@@ -50,7 +84,7 @@ device_dropdown = ttk.Combobox(
 )
 
 device_dropdown.grid(row=2, column=1, padx=5, pady=5)
-device_dropdown.current(0)  # default selection
+device_dropdown.current(5)  # default selection
 
 # ---- Device Issue ---- 
 tk.Label(input_frame, text="Issue:", font=('Arial', 14)).grid(row=3, column=0, sticky="w", padx=5, pady=5)
@@ -104,7 +138,7 @@ tk.Label(input_frame, text="Estimate ($):", font=('Arial', 14))\
 cost = tk.Entry(input_frame, font=('Arial', 14))
 cost.grid(row=6, column=1, padx=5, pady=5)
 
-myButton = tk.Button(input_frame , width=15, text="Add Client", font=('Arial', 14),command=add_client)
+myButton = tk.Button(input_frame , width=15, text="Add Client", font=('Arial', 14), command=add_client)
 myButton.grid(row=7, column=0, pady=5)
 
 app_window.mainloop()
