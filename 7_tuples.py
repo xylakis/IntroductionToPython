@@ -8,6 +8,9 @@ dimensions = (200, 50)
 print(dimensions[0])
 print(dimensions[1])
 
+# this will give an error because tuples do not support item assignment
+dimensions[0] = 250
+
 dimensions = (150,50)
 
 # What happens if I try and change one of its values? 

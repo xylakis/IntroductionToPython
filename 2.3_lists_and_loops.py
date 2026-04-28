@@ -65,15 +65,15 @@ i = 0
 # print("Hello " + name + " welcome to the world of Python programming!")
 
 #Combining a while loop with user input from the terminal
-while(input("I am at " + str(i) + " Tell me when to stop: ") != 'stop'):
+# while(input("I am at " + str(i) + " Tell me when to stop: ") != 'stop'):
     
-    if i >= len(my_streefood_list):
-        print("You have reached the end of the list")
-        break
+#     if i >= len(my_streefood_list):
+#         print("You have reached the end of the list")
+#         break
 
-    print(my_streefood_list[i])
+#     print(my_streefood_list[i])
     
-    i += 1
+#     i += 1
 
 #The opposite case
 # while(input("I am at " + str(i) + " Tell me if I should go on: ") == 'go on'):
@@ -84,41 +84,42 @@ while(input("I am at " + str(i) + " Tell me when to stop: ") != 'stop'):
 
 # ---------------------- LISTS ADVANCED ----------------------------------------------
 
-# my_streefood_list.append("Curly fries")
-# print(my_streefood_list)
+# pushing an element to the end of the list with append() method
+my_streefood_list.append("Curly fries")
+print(my_streefood_list)
 
-# my_streefood_list.pop()
-# print(my_streefood_list)
+my_streefood_list.pop()
+print(my_streefood_list)
 
-# my_streefood_list.pop()
-# print(my_streefood_list)
+my_streefood_list.pop()
+print(my_streefood_list)
 
-# my_streefood_list.sort()
-# print(my_streefood_list)
+my_streefood_list.sort()
+print(my_streefood_list)
 
-# my_streefood_list.append("souvlakia")
-# print(my_streefood_list)
+my_streefood_list.append("souvlakia")
+print(my_streefood_list)
 
-# print(my_streefood_list.count("souvlakia"))
+my_streefood_list.append("souvlakia")
+print(my_streefood_list)
 
-# ---------------------- LISTS ADVANCED WITH LOOPS----------------------------------------------
+print(my_streefood_list.count("souvlakia"))
 
-# while(input("Tell me if I should go on: ") == 'go'):
+# ---------------------- LISTS ADVANCED WITH LOOPS and INPUT ----------------------------------------------
 
-#     item = input("Give me a streetfood to add to the list: ")
+my_order_list = []
+
+while True:
     
-#     my_streefood_list.append(item)
+    item = input("Give me order item or type stop")
     
-#     print(my_streefood_list)
+    if(item =='stop'):
+        break
+    else:
+        my_order_list.append(item)
+        print(my_order_list)
 
-# while True:
-#     item = input("Give me order item or type stop")
-#     if(item =='stop'):
-#         break
-#     else:
-#         my_streefood_list.append(item)
-#         print(my_streefood_list)
-# print("Your order is ", my_streefood_list)
+print("Your order is ", my_order_list)
 
 
 
