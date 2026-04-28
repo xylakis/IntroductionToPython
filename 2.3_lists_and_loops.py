@@ -16,37 +16,64 @@ print(my_streefood_list[0],my_streefood_list[2],my_streefood_list[4])
 
 print("To megethos tis listas me ta streetfood einai:", len(my_streefood_list))
 
+#Tupple examples, 
+#converting a list to a tupple and vice versa
+# tuple_example = ("souvlakia", "pizzes", "makaronades","burgerakia", "kebap", "kalamakia")   
+# list_test = list(tuple_example)
+# back_to_tupletuple=tuple(list_test)
+
+# print(type(tuple_example))
+# print(type(list_test))
+# print(type(back_to_tupletuple))
+
 # ---------------------- FOR LOOP ----------------------------------------------
 
-# 1. way to write a for loop 
+# # 1st way to write a for loop 
 # for i in range(0, len(my_streefood_list)):
 #     print(i)
 #     print(str(my_streefood_list[i]) + " is on the list" )
 
-# 2nd way to write a for loop 
+# # 2nd way to write a for loop 
 # for student_present in student_present_list:
 #     print(student_present)
 
 # 3rd way to print a for loop with modulo operator %
-# for i, student_present in enumerate(student_present_list):
-#     if(i%2 == 0):
-#         print(i,student_present)
+# for i, street_food in enumerate(my_streefood_list):
+#     # print(i,street_food)
+#     if(i%2 != 0):
+#         print(i,street_food)
 
 # ---------------------- WHILE LOOP ----------------------------------------------
-
+#1. While in normal order
 i = 0
 
 # A while loop runs until condition is FALSE
-# while(i<len(student_present_list)):
-#     print(student_present_list[i])
+# while(i<len(my_streefood_list)):
+#     print(my_streefood_list[i])
+#     i += 1
+
+#2. While in reverse order
+# i = len(my_streefood_list) - 1
+
+# A while loop runs until condition is FALSE
+# while(i>=0):
+#     print(i,my_streefood_list[i])
 #     i -= 1
 
+# name = input("What is your name? ")
+# print(type(int(name)))
+# print("Hello " + name + " welcome to the world of Python programming!")
+
 #Combining a while loop with user input from the terminal
-# while(input("I am at " + str(i) + " Tell me when to stop: ") != 'stop'):
+while(input("I am at " + str(i) + " Tell me when to stop: ") != 'stop'):
     
-#     print(my_streefood_list[i])
+    if i >= len(my_streefood_list):
+        print("You have reached the end of the list")
+        break
+
+    print(my_streefood_list[i])
     
-#     i+=1
+    i += 1
 
 #The opposite case
 # while(input("I am at " + str(i) + " Tell me if I should go on: ") == 'go on'):
@@ -56,8 +83,6 @@ i = 0
 #     i+=1
 
 # ---------------------- LISTS ADVANCED ----------------------------------------------
-
-#Adding new elements to a list
 
 # my_streefood_list.append("Curly fries")
 # print(my_streefood_list)
@@ -78,22 +103,22 @@ i = 0
 
 # ---------------------- LISTS ADVANCED WITH LOOPS----------------------------------------------
 
-while(input("Tell me if I should go on: ") == 'go'):
+# while(input("Tell me if I should go on: ") == 'go'):
 
-    item = input("Give me a streetfood to add to the list: ")
+#     item = input("Give me a streetfood to add to the list: ")
     
-    my_streefood_list.append(item)
+#     my_streefood_list.append(item)
     
-    print(my_streefood_list)
+#     print(my_streefood_list)
 
-while True:
-    item = input("Give me order item or type stop")
-    if(item =='stop'):
-        break
-    else:
-        my_streefood_list.append(item)
-        print(my_streefood_list)
-print("Your order is ", my_streefood_list)
+# while True:
+#     item = input("Give me order item or type stop")
+#     if(item =='stop'):
+#         break
+#     else:
+#         my_streefood_list.append(item)
+#         print(my_streefood_list)
+# print("Your order is ", my_streefood_list)
 
 
 
