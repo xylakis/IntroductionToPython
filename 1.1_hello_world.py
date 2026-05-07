@@ -5,4 +5,8 @@ y = 15
 
 message = " This is a test message"
 
+sumThis = x + y
+
+print(sumThis)
+
 print(message) 
