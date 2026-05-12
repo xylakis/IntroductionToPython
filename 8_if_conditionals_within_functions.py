@@ -1,3 +1,5 @@
+import eight_defs
+
 # #function no input no return, just print
 # def age_restrictions():
     
@@ -51,24 +53,10 @@ fpa = 0.24
 
 european_country = input("Which country are you in?")
 
-def adjust_vat_eu(european_country):
-
-    global fpa 
-
-    if (european_country == 'Luxemburg'):
-        fpa = 0.17
-    elif (european_country == 'Hungary'):
-        fpa = 0.27
-    elif (european_country == 'Germany'): 
-        fpa = 0.19 
-    elif (european_country == 'Italy'):
-        fpa = 0.22
-    else:
-        fpa = 0.24
-
-adjust_vat_eu(european_country)
+fpa = eight_defs.adjust_vat_eu(european_country)
 
 print("Your fpa is ", fpa)
+
 
 
 
